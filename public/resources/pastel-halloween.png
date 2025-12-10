@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="300" height="300" viewBox="0 0 300 300">
+  <rect fill="#FFF8F0" width="300" height="300"/>
+  <rect x="75" y="100" width="150" height="120" rx="10" fill="#4A3728"/>
+  <rect x="75" y="100" width="150" height="30" rx="10" fill="#2D1F14"/>
+  <rect x="75" y="190" width="150" height="30" rx="10" fill="#2D1F14"/>
+  <circle cx="110" cy="155" r="15" fill="#FF6B35"/>
+  <circle cx="150" cy="155" r="15" fill="#FF6B35"/>
+  <circle cx="190" cy="155" r="15" fill="#FF6B35"/>
+  <text x="150" y="260" font-family="sans-serif" font-size="14" fill="#8B4513" text-anchor="middle" font-weight="bold">Pastel Halloween</text>
+</svg>
