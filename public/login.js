@@ -1,8 +1,5 @@
-// ey este es el js del login -bynd
 
-// inicializar pagina de login -bynd
 document.addEventListener('DOMContentLoaded', () => {
-  // si ya esta logueado, redirigir -bynd
   if (AppState.usuario) {
     window.location.href = 'index.html';
     return;
@@ -11,7 +8,6 @@ document.addEventListener('DOMContentLoaded', () => {
   configurarFormularios();
 });
 
-// configurar formularios de login y registro -bynd
 function configurarFormularios() {
   const loginForm = document.getElementById('loginForm');
   const registerForm = document.getElementById('registerForm');
@@ -20,7 +16,6 @@ function configurarFormularios() {
   const showRegisterBtn = document.getElementById('showRegisterBtn');
   const showLoginBtn = document.getElementById('showLoginBtn');
   
-  // toggle entre login y registro -bynd
   showRegisterBtn.addEventListener('click', (e) => {
     e.preventDefault();
     loginCard.style.display = 'none';
@@ -33,7 +28,6 @@ function configurarFormularios() {
     loginCard.style.display = 'block';
   });
   
-  // submit login -bynd
   loginForm.addEventListener('submit', async (e) => {
     e.preventDefault();
     
@@ -56,7 +50,6 @@ function configurarFormularios() {
     }
   });
   
-  // submit registro -bynd
   registerForm.addEventListener('submit', async (e) => {
     e.preventDefault();
     
