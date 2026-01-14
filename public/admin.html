@@ -8,7 +8,6 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body class="page-internal">
-  <!-- header -bynd -->
   <header class="header">
     <div class="header-container">
       <a href="index.html" class="logo">
@@ -58,7 +57,7 @@
         <p>Bienvenido al centro de control de La Desesperanza</p>
       </div>
       
-      <!-- verificacion de acceso -bynd -->
+      
       <div id="accessDenied" style="display: none; text-align: center; padding: 4rem 2rem;">
         <div style="font-size: 4rem; margin-bottom: 1rem; color: var(--color-muted);">
           <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -71,15 +70,15 @@
         <a href="login.html" class="btn-primary">Iniciar Sesion como Admin</a>
       </div>
       
-      <!-- contenido del dashboard -bynd -->
+    
       <div id="dashboardContent" style="display: none;">
-        <!-- metricas -bynd -->
+        
         <div class="metrics-grid" id="metricsGrid">
-          <!-- se cargan con js -bynd -->
+          
         </div>
         
         <div class="admin-grid">
-          <!-- pedidos recientes -bynd -->
+          
           <div class="admin-card">
             <div class="admin-card-header">
               <h2>Pedidos Recientes</h2>
@@ -97,23 +96,23 @@
                 </tr>
               </thead>
               <tbody id="ordersTableBody">
-                <!-- se cargan con js -bynd -->
+                
               </tbody>
             </table>
           </div>
           
-          <!-- alertas de inventario -bynd -->
+          
           <div class="admin-card">
             <div class="admin-card-header">
               <h2>Alertas de Inventario</h2>
             </div>
             <div class="alerts-list" id="alertsList">
-              <!-- se cargan con js -bynd -->
+              
             </div>
           </div>
         </div>
         
-        <!-- acciones rapidas -bynd -->
+        
         <div class="admin-card" style="margin-top: 1.5rem;">
           <div class="admin-card-header">
             <h2>Acciones Rapidas</h2>
@@ -137,7 +136,7 @@
     </div>
   </main>
 
-  <!-- toast notification -bynd -->
+  
   <div class="toast hidden" id="toast">
     <span>OK</span>
     <span id="toastMessage">Accion completada</span>
