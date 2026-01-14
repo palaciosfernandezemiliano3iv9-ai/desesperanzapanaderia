@@ -1,11 +1,8 @@
-// ey este es el js del carrito -bynd
 
-// inicializar pagina del carrito -bynd
 document.addEventListener('DOMContentLoaded', () => {
   renderizarCarrito();
 });
 
-// renderizar contenido del carrito -bynd
 function renderizarCarrito() {
   const container = document.getElementById('cartContent');
   
@@ -28,7 +25,7 @@ function renderizarCarrito() {
   }
   
   const subtotal = obtenerTotalCarrito();
-  const envio = subtotal > 500 ? 0 : 50; // envio gratis arriba de 500 -bynd
+  const envio = subtotal > 500 ? 0 : 50; 
   const total = subtotal + envio;
   
   container.innerHTML = `
@@ -72,11 +69,9 @@ function renderizarCarrito() {
     </div>
   `;
   
-  // agregar eventos a los botones de cantidad y eliminar -bynd
   configurarEventosCarrito();
 }
 
-// crear HTML de un item del carrito -bynd
 function crearCartItemHTML(item) {
   return `
     <div class="cart-item" data-id="${item.id}">
@@ -102,9 +97,7 @@ function crearCartItemHTML(item) {
   `;
 }
 
-// configurar eventos de los botones del carrito -bynd
 function configurarEventosCarrito() {
-  // botones de menos -bynd
   document.querySelectorAll('.minus-btn').forEach(btn => {
     btn.addEventListener('click', () => {
       const id = parseInt(btn.dataset.id);
@@ -116,7 +109,6 @@ function configurarEventosCarrito() {
     });
   });
   
-  // botones de mas -bynd
   document.querySelectorAll('.plus-btn').forEach(btn => {
     btn.addEventListener('click', () => {
       const id = parseInt(btn.dataset.id);
@@ -128,7 +120,6 @@ function configurarEventosCarrito() {
     });
   });
   
-  // botones de eliminar -bynd
   document.querySelectorAll('.remove-item-btn').forEach(btn => {
     btn.addEventListener('click', () => {
       const id = parseInt(btn.dataset.id);
@@ -140,7 +131,6 @@ function configurarEventosCarrito() {
   });
 }
 
-// procesar compra (simulado) -bynd
 function procesarCompra() {
   if (!AppState.usuario) {
     mostrarToast('Inicia sesión para continuar con tu compra');
@@ -150,10 +140,8 @@ function procesarCompra() {
     return;
   }
   
-  // simular proceso de compra -bynd
   mostrarToast('Gracias por tu compra!');
   
-  // limpiar carrito -bynd
   AppState.carrito = [];
   guardarEstadoLocal();
   actualizarUI();
@@ -163,5 +151,4 @@ function procesarCompra() {
   }, 2000);
 }
 
-// exponer funcion globalmente -bynd
 window.procesarCompra = procesarCompra;
