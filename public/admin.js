@@ -1,11 +1,8 @@
-// ey este es el js del admin dashboard -bynd
 
-// inicializar pagina de admin -bynd
 document.addEventListener('DOMContentLoaded', () => {
   verificarAcceso();
 });
 
-// verificar si el usuario tiene acceso de admin -bynd
 function verificarAcceso() {
   const accessDenied = document.getElementById('accessDenied');
   const dashboardContent = document.getElementById('dashboardContent');
@@ -22,7 +19,6 @@ function verificarAcceso() {
   cargarDashboard();
 }
 
-// cargar datos del dashboard -bynd
 async function cargarDashboard() {
   try {
     const response = await fetch('/api/admin/dashboard');
@@ -37,7 +33,7 @@ async function cargarDashboard() {
   }
 }
 
-// renderizar tarjetas de metricas -bynd
+
 function renderizarMetricas(metricas) {
   const grid = document.getElementById('metricsGrid');
   
@@ -62,7 +58,7 @@ function renderizarMetricas(metricas) {
   `).join('');
 }
 
-// renderizar tabla de pedidos -bynd
+
 function renderizarPedidos(pedidos) {
   const tbody = document.getElementById('ordersTableBody');
   
@@ -78,7 +74,7 @@ function renderizarPedidos(pedidos) {
   `).join('');
 }
 
-// renderizar alertas de inventario -bynd
+
 function renderizarAlertas(alertas) {
   const lista = document.getElementById('alertsList');
   
