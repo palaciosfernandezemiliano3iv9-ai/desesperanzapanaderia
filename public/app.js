@@ -1,13 +1,11 @@
-// ey este es el js principal de la panaderia -bynd
 
-// estado global de la app -bynd
 const AppState = {
   usuario: null,
   carrito: [],
   productos: []
 };
 
-// inicializar app -bynd
+
 document.addEventListener('DOMContentLoaded', () => {
   cargarEstadoLocal();
   actualizarUI();
@@ -15,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
   configurarEventos();
 });
 
-// cargar estado desde localStorage -bynd
+
 function cargarEstadoLocal() {
   try {
     const usuario = localStorage.getItem('usuario');
@@ -32,7 +30,7 @@ function cargarEstadoLocal() {
   }
 }
 
-// guardar estado en localStorage -bynd
+
 function guardarEstadoLocal() {
   try {
     if (AppState.usuario) {
@@ -46,9 +44,8 @@ function guardarEstadoLocal() {
   }
 }
 
-// actualizar elementos de la UI segun el estado -bynd
+
 function actualizarUI() {
-  // actualizar badge del carrito -bynd
   const cartBadge = document.getElementById('cartBadge');
   if (cartBadge) {
     const totalItems = AppState.carrito.reduce((sum, item) => sum + item.cantidad, 0);
@@ -56,7 +53,7 @@ function actualizarUI() {
     cartBadge.style.display = totalItems > 0 ? 'flex' : 'none';
   }
   
-  // actualizar boton de usuario -bynd
+  
   const userBtn = document.getElementById('userBtn');
   if (userBtn) {
     if (AppState.usuario) {
@@ -84,7 +81,6 @@ function actualizarUI() {
   }
 }
 
-// cargar productos destacados desde el API -bynd
 async function cargarProductosDestacados() {
   const grid = document.getElementById('featuredProductsGrid');
   if (!grid) return;
@@ -96,7 +92,7 @@ async function cargarProductosDestacados() {
     
     grid.innerHTML = productos.map(producto => crearProductoCard(producto)).join('');
     
-    // agregar eventos a los botones -bynd
+  
     grid.querySelectorAll('.add-to-cart-btn').forEach(btn => {
       btn.addEventListener('click', () => {
         const id = parseInt(btn.dataset.id);
@@ -112,7 +108,7 @@ async function cargarProductosDestacados() {
   }
 }
 
-// crear HTML de un producto card -bynd
+
 function crearProductoCard(producto) {
   const estrellas = '*'.repeat(Math.floor(producto.rating));
   
@@ -142,7 +138,6 @@ function crearProductoCard(producto) {
   `;
 }
 
-// agregar producto al carrito -bynd
 function agregarAlCarrito(producto, cantidad = 1) {
   const itemExistente = AppState.carrito.find(item => item.id === producto.id);
   
@@ -163,14 +158,13 @@ function agregarAlCarrito(producto, cantidad = 1) {
   mostrarToast(`${producto.nombre} agregado al carrito`);
 }
 
-// remover producto del carrito -bynd
+
 function removerDelCarrito(productoId) {
   AppState.carrito = AppState.carrito.filter(item => item.id !== productoId);
   guardarEstadoLocal();
   actualizarUI();
 }
 
-// actualizar cantidad en el carrito -bynd
 function actualizarCantidad(productoId, nuevaCantidad) {
   if (nuevaCantidad <= 0) {
     removerDelCarrito(productoId);
@@ -185,12 +179,10 @@ function actualizarCantidad(productoId, nuevaCantidad) {
   }
 }
 
-// obtener total del carrito -bynd
 function obtenerTotalCarrito() {
   return AppState.carrito.reduce((total, item) => total + (item.precio * item.cantidad), 0);
 }
 
-// mostrar toast notification -bynd
 function mostrarToast(mensaje) {
   const toast = document.getElementById('toast');
   const toastMessage = document.getElementById('toastMessage');
@@ -205,9 +197,7 @@ function mostrarToast(mensaje) {
   }
 }
 
-// configurar eventos globales -bynd
 function configurarEventos() {
-  // menu movil -bynd
   const mobileMenuBtn = document.getElementById('mobileMenuBtn');
   const mobileMenu = document.getElementById('mobileMenu');
   
@@ -219,9 +209,7 @@ function configurarEventos() {
   }
 }
 
-// funciones de autenticacion -bynd
 
-// login -bynd
 async function login(email, password) {
   try {
     const response = await fetch('/api/login', {
@@ -248,7 +236,6 @@ async function login(email, password) {
   }
 }
 
-// registro -bynd
 async function registro(nombre, email, password) {
   try {
     const response = await fetch('/api/registro', {
@@ -275,25 +262,21 @@ async function registro(nombre, email, password) {
   }
 }
 
-// cerrar sesion -bynd
 function cerrarSesion() {
   AppState.usuario = null;
   guardarEstadoLocal();
   actualizarUI();
   mostrarToast('Sesión cerrada');
   
-  // si estamos en admin, redirigir -bynd
   if (window.location.pathname.includes('admin')) {
     window.location.href = 'index.html';
   }
 }
 
-// verificar si el usuario es admin -bynd
 function esAdmin() {
   return AppState.usuario && AppState.usuario.rol === 'admin';
 }
 
-// exponer funciones globalmente para usar en otras paginas -bynd
 window.AppState = AppState;
 window.agregarAlCarrito = agregarAlCarrito;
 window.removerDelCarrito = removerDelCarrito;
