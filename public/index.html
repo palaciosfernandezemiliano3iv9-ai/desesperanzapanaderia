@@ -6,10 +6,10 @@
   <title>La Desesperanza - Panaderia Artesanal</title>
   <meta name="description" content="Panaderia artesanal con productos tematicos de Navidad">
   <link rel="stylesheet" href="style.css">
-  <!-- leaflet css -bynd -->
+  
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
   <style>
-    /* estilos del mapa en footer -bynd */
+    
     .footer-map {
       position: relative;
       background: linear-gradient(135deg, #1A1A1A 0%, #2D1A1A 100%);
@@ -88,7 +88,7 @@
       padding: 1rem;
       font-size: 0.875rem;
     }
-    /* leaflet popup custom -bynd */
+  
     .leaflet-popup-content-wrapper {
       border-radius: 12px;
     }
@@ -122,7 +122,7 @@
   </style>
 </head>
 <body class="page-internal">
-  <!-- header -bynd -->
+
   <header class="header">
     <div class="header-container">
       <a href="index.html" class="logo">
@@ -157,7 +157,7 @@
       </div>
     </div>
     
-    <!-- menu movil -bynd -->
+    
     <div class="mobile-menu" id="mobileMenu">
       <a href="index.html" class="nav-link active">Inicio</a>
       <a href="productos.html" class="nav-link">Productos</a>
@@ -167,7 +167,7 @@
   </header>
 
   <main>
-    <!-- hero section -bynd -->
+    
     <section class="hero">
       <div class="hero-container">
         <div class="hero-content">
@@ -225,7 +225,7 @@
       </div>
     </section>
 
-    <!-- productos destacados -bynd -->
+    
     <section class="featured-products" id="destacados">
       <div class="section-container">
         <div class="section-header">
@@ -237,12 +237,12 @@
         </div>
         
         <div class="products-grid" id="featuredProductsGrid">
-          <!-- productos se cargan con js -bynd -->
+          
         </div>
       </div>
     </section>
 
-    <!-- historia de la panaderia -bynd -->
+    
     <section class="bakery-story">
       <div class="section-container">
         <div class="story-container">
@@ -272,7 +272,7 @@
       </div>
     </section>
 
-    <!-- testimonios -bynd -->
+  
     <section class="testimonials">
       <div class="section-container">
         <div class="section-header">
@@ -332,7 +332,7 @@
       </div>
     </section>
 
-    <!-- trust signals -bynd -->
+
     <section class="trust-signals">
       <div class="trust-grid">
         <div class="trust-item">
@@ -380,7 +380,7 @@
       </div>
     </section>
 
-    <!-- call to action -bynd -->
+    
     <section class="cta">
       <div class="cta-container">
         <h2>Listo para Probar Nuestras Delicias?</h2>
@@ -392,7 +392,7 @@
     </section>
   </main>
 
-  <!-- footer con mapa -bynd -->
+  
   <footer class="footer-map">
     <div class="footer-map-container">
       <div class="footer-info">
@@ -433,26 +433,26 @@
     </div>
   </footer>
 
-  <!-- toast notification -bynd -->
+  
   <div class="toast hidden" id="toast">
     <span>OK</span>
     <span id="toastMessage">Producto agregado al carrito</span>
   </div>
 
   <script src="app.js"></script>
-  <!-- leaflet js -bynd -->
+  
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
   <script>
-    // inicializar mapa -bynd
+  
     const map = L.map('map').setView([19.450293067076654, -99.1478620891641], 16);
+  
     
-    // capa de openstreetmap -bynd
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       maxZoom: 19,
       attribution: '© OpenStreetMap'
     }).addTo(map);
     
-    // icono personalizado navideno -bynd
+    
     const iconoPanaderia = L.divIcon({
       className: 'custom-marker',
       html: '<div style="background: linear-gradient(135deg, #C41E3A, #228B22); width: 40px; height: 40px; border-radius: 50% 50% 50% 0; transform: rotate(-45deg); border: 3px solid white; box-shadow: 0 4px 10px rgba(0,0,0,0.3); display: flex; align-items: center; justify-content: center;"><span style="display: block; transform: rotate(45deg); text-align: center; color: white; font-weight: bold; font-size: 12px;">LD</span></div>',
@@ -461,7 +461,7 @@
       popupAnchor: [0, -40]
     });
     
-    // marcador con popup -bynd
+
     const marker = L.marker([19.450293067076654, -99.1478620891641], { icon: iconoPanaderia }).addTo(map);
     marker.bindPopup('<div class="map-popup"><h4>La Desesperanza</h4><p>Panaderia Artesanal</p><p>Visitanos!</p></div>').openPopup();
   </script>
