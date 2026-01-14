@@ -1,11 +1,5 @@
-/* ===================================
-   estilos principales panaderia la desesperanza -bynd
-   tema navidad
-   =================================== */
 
-/* variables css - tema navidad -bynd */
 :root {
-  /* colores navidad -bynd */
   --color-primary: #C41E3A;
   --color-primary-dark: #8B0000;
   --color-primary-light: #FF6B6B;
@@ -21,19 +15,16 @@
   --color-warning: #FFD700;
   --color-error: #C41E3A;
   
-  /* sombras -bynd */
   --shadow-sm: 0 1px 2px rgba(196, 30, 58, 0.05);
   --shadow-md: 0 4px 6px rgba(196, 30, 58, 0.1);
   --shadow-lg: 0 10px 15px rgba(196, 30, 58, 0.15);
   
-  /* bordes -bynd */
   --radius-sm: 0.375rem;
   --radius-md: 0.5rem;
   --radius-lg: 0.75rem;
   --radius-xl: 1rem;
 }
 
-/* reset basico -bynd */
 *, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
@@ -47,7 +38,6 @@ body {
   line-height: 1.6;
 }
 
-/* tipografia -bynd */
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Georgia', serif;
   font-weight: 700;
@@ -64,9 +54,6 @@ a {
   text-decoration: none;
 }
 
-/* ===================================
-   HEADER -bynd
-   =================================== */
 .header {
   position: fixed;
   top: 0;
@@ -200,9 +187,6 @@ a {
   color: var(--color-foreground);
 }
 
-/* ===================================
-   HERO SECTION (NAVIDAD) -bynd
-   =================================== */
 .hero {
   padding: 6rem 1.5rem 4rem;
   position: relative;
@@ -210,7 +194,6 @@ a {
   background: linear-gradient(135deg, #FFF9F9 0%, #FFE8E8 50%, #E8F5E8 100%);
 }
 
-/* decoraciones navidad -bynd */
 .hero::before {
   content: '';
   position: absolute;
@@ -395,9 +378,6 @@ a {
   color: var(--color-muted);
 }
 
-/* ===================================
-   PRODUCTOS DESTACADOS -bynd
-   =================================== */
 .featured-products {
   padding: 4rem 1.5rem;
   background: var(--color-background);
@@ -443,9 +423,6 @@ a {
   gap: 1.5rem;
 }
 
-/* ===================================
-   PRODUCT CARD -bynd
-   =================================== */
 .product-card {
   background: var(--color-card);
   border-radius: var(--radius-xl);
@@ -588,9 +565,6 @@ a {
   box-shadow: 0 4px 12px rgba(196, 30, 58, 0.3);
 }
 
-/* ===================================
-   BAKERY STORY -bynd
-   =================================== */
 .bakery-story {
   padding: 4rem 1.5rem;
   background: var(--color-card);
@@ -622,9 +596,6 @@ a {
   font-size: 1.0625rem;
 }
 
-/* ===================================
-   TESTIMONIALS -bynd
-   =================================== */
 .testimonials {
   padding: 4rem 1.5rem;
   background: var(--color-background);
@@ -684,9 +655,6 @@ a {
   color: var(--color-muted);
 }
 
-/* ===================================
-   TRUST SIGNALS -bynd
-   =================================== */
 .trust-signals {
   padding: 3rem 1.5rem;
   background: var(--color-card);
@@ -732,9 +700,6 @@ a {
   font-size: 0.875rem;
 }
 
-/* ===================================
-   CTA SECTION -bynd
-   =================================== */
 .cta {
   padding: 4rem 1.5rem;
   text-align: center;
@@ -785,9 +750,6 @@ a {
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
 }
 
-/* ===================================
-   FOOTER -bynd
-   =================================== */
 .footer {
   background: linear-gradient(135deg, #1A1A1A 0%, #2D1A1A 100%);
   color: white;
@@ -848,11 +810,7 @@ a {
   font-size: 0.875rem;
 }
 
-/* ===================================
-   PAGINAS INTERNAS -bynd
-   =================================== */
 
-/* catalog page -bynd */
 .catalog-page {
   padding: 5rem 1.5rem 3rem;
   background: var(--color-background);
@@ -931,7 +889,6 @@ a {
   gap: 2rem;
 }
 
-/* filtros panel -bynd */
 .filters-panel {
   background: var(--color-card);
   padding: 1.5rem;
@@ -1003,9 +960,6 @@ a {
   margin-bottom: 1rem;
 }
 
-/* ===================================
-   CART PAGE -bynd
-   =================================== */
 .cart-page {
   padding: 5rem 1.5rem 3rem;
   background: var(--color-background);
@@ -1106,7 +1060,6 @@ a {
   font-size: 1.25rem;
 }
 
-/* order summary -bynd */
 .order-summary {
   background: var(--color-card);
   padding: 1.5rem;
@@ -1167,7 +1120,6 @@ a {
   font-size: 0.875rem;
 }
 
-/* empty cart -bynd */
 .empty-cart {
   text-align: center;
   padding: 4rem 2rem;
@@ -1188,9 +1140,6 @@ a {
   margin-bottom: 1.5rem;
 }
 
-/* ===================================
-   LOGIN PAGE -bynd
-   =================================== */
 .login-page {
   padding: 5rem 1.5rem 3rem;
   background: var(--color-background);
@@ -1322,9 +1271,6 @@ a {
   font-weight: 700;
 }
 
-/* ===================================
-   ADMIN DASHBOARD -bynd
-   =================================== */
 .admin-page {
   padding: 5rem 1.5rem 3rem;
   background: var(--color-background);
@@ -1440,7 +1386,6 @@ a {
   color: var(--color-primary);
 }
 
-/* orders table -bynd */
 .orders-table {
   width: 100%;
   border-collapse: collapse;
@@ -1496,7 +1441,6 @@ a {
   color: var(--color-error);
 }
 
-/* alerts list -bynd */
 .alerts-list {
   padding: 0;
 }
@@ -1550,9 +1494,6 @@ a {
   margin-top: 0.25rem;
 }
 
-/* ===================================
-   TOAST NOTIFICATION -bynd
-   =================================== */
 .toast {
   position: fixed;
   bottom: 1.5rem;
@@ -1584,9 +1525,6 @@ a {
   }
 }
 
-/* ===================================
-   RESPONSIVE -bynd
-   =================================== */
 @media (max-width: 1024px) {
   .hero-container {
     grid-template-columns: 1fr;
@@ -1686,7 +1624,6 @@ a {
   }
 }
 
-/* mobile menu -bynd */
 .mobile-menu {
   display: none;
   position: absolute;
